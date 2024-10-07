@@ -1,0 +1,166 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Mini-Lesson 1: VSCode, Quarto, and Jupyter\"\n",
+        "author: \"Ozzy Houck\"\n",
+        "format:\n",
+        "  revealjs:\n",
+        "    slide-number: true\n",
+        "    chalkboard: false \n",
+        "    preview-links: auto\n",
+        "execute:\n",
+        "  eval: true\n",
+        "  echo: true\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## Downloading and Installing\n",
+        "\n",
+        "- VSCode: [https://code.visualstudio.com/](https://code.visualstudio.com/)\n",
+        "- Quarto: [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)\n",
+        "- Jupyter: `pip install jupyter`\n"
+      ],
+      "id": "a8263206"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "pip install jupyter pandas altair"
+      ],
+      "id": "6eee42c2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "- Helpful startup guides:\n",
+        "  - Installing VSCode on **[Mac](https://code.visualstudio.com/docs/languages/python)** and **[Windows](https://code.visualstudio.com/docs/languages/python)**\n",
+        "  - Setting up **[python](https://code.visualstudio.com/docs/languages/python)** for VSCode \n",
+        "\n",
+        "## Setting up Python in VSCode\n",
+        "- Ctrl+Shift+P to open command palette (or `Cmd` on Mac)\n",
+        "- Type \"Python: Select Interpreter\"\n",
+        "- Choose the Python interpreter you want to use\n",
+        "- In terminal, type `which pip` to make sure you are using the right Python version when installing packages with pip\n",
+        "\n",
+        "## Basics \n",
+        "<!-- How to comment --->\n",
+        "<!-- Notice how both numbering methods work --->\n",
+        "- How to use VSCode:\n",
+        "  1. Open a folder the folder for your github repo in VSCode\n",
+        "  1. Install the Python, Quarto, and Jupyter VSCode extensions\n",
+        "\n",
+        "- Quarto Syntax: \n",
+        "  1. Preamble: Format selection using YAML (like R Markdown)\n",
+        "  2. Content: Markdown (like R markdown)\n",
+        "  3. Code chunks: Python, R, etc. (like R markdown)\n",
+        "\n",
+        "## Compilation and Code Chunks \n",
+        "\n",
+        "- Compilation\n",
+        "  - Keyboard shortcut: Ctrl+Shift+K\n",
+        "  - Render button in VSCode (top right corner)\n",
+        "  - Command line: `quarto render document.qmd`\n",
+        "    - Automatically compiles into output format from preamble\n",
+        "\n",
+        "- Code Chunk Options\n",
+        "  - `echo: true` - Show code\n",
+        "  - `eval: true` - Run code\n",
+        "\n",
+        "\n",
+        "## Jupyter in VSCode\n",
+        "\n",
+        "- Interactive Python development\n",
+        "- Run code chunks individually\n",
+        "- View output in-line\n"
+      ],
+      "id": "74f75f33"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "df = pd.DataFrame({\n",
+        "    'A': [1, 2, 3],\n",
+        "    'B': [4, 5, 6]\n",
+        "})\n",
+        "print(\"Here is some output!\")\n",
+        "df.head(1)"
+      ],
+      "id": "5f34b27d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "## This Class: Repository Structure and Usage\n",
+        "\n",
+        "- Student repo contents:\n",
+        "  1. `.qmd` files in lecture folders\n",
+        "  2. Compiled HTML/PDF files\n",
+        "  3. Data and figure folders\n",
+        "\n",
+        "- In-class workflow:\n",
+        "  1. Open compiled HTML/PDF to follow along\n",
+        "  2. Have `.qmd` open in VSCode for exercises\n",
+        "  3. Use Jupyter for interactive coding\n",
+        "\n",
+        "<!--  Alternative YAML\n",
+        "\n",
+        "---"
+      ],
+      "id": "d7edc018"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "  revealjs:\n",
+        "    slide-number: true\n",
+        "    chalkboard: false \n",
+        "    preview-links: auto\n",
+        "    footer: \"VSCode, Quarto, and Jupyter Workshop\"\n",
+        "  html:\n",
+        "    toc: true\n",
+        "    number-sections: true\n",
+        "    html-math-method: katex\n",
+        "  beamer:\n",
+        "    theme: Madrid\n",
+        "    colortheme: dolphin\n",
+        "    fonttheme: structurebold\n",
+        "    navigation: horizontal\n",
+        "    section-titles: true\n",
+        "  pdf:\n",
+        "    documentclass: article\n",
+        "    papersize: letter\n",
+        "    toc: true\n",
+        "    number-sections: true\n",
+        "    colorlinks: true\n",
+        "--- -->"
+      ],
+      "id": "45bffc61"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/sarahmorrison/Library/Python/3.9/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
