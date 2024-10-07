@@ -1,0 +1,106 @@
+---
+title: "Class 3 Notes"
+author: "Sarah Morrison"
+date: Today
+date-format: long
+format: 
+    html:
+        echo: true
+        toc: true
+---
+
+
+# Data Types
+```{python}
+import altair as alt
+from vega_datasets import data as vega_data
+seattle = vega_data.seattle_weather()
+alt.Chart(seattle).mark_bar().encode(
+    alt.X('month(date):O'),
+    alt.Y('average(precipitation):O')
+)
+```
+
+```{python}
+alt.Chart(seattle).mark_bar().encode(
+    alt.X('month(date):T'),
+    alt.Y('average(precipitation):Q')
+)
+```
+
+Explicitly specify data type (:O) in charts!
+
+# Visual Encoding
+
+1. position (graph/chart)
+#### Differential Variables on Z plane
+2. size of marks
+3. their value (brightness)
+4. texture
+5. color
+6. orientation
+7. shape
+
+### Color Advice
+nominal data = categorical pallette
+    no ordering inherent 
+types of palletes
+    sequential single-hue
+    sequential multi-hue (more contrast, green to red to yellow)
+        diverging schemes (red to white to blue)
+    cyclical (wrap around rainbow - roygbvr)
+colorbrewer2.org
+harmonization in series of graph
+
+# Encoding Channels
+
+x, y, size, color, opacity, shape. column, row
+
+```{python}
+data = vega_data.gapminder()
+import pandas as pd
+data2000 = data[data['year']==2000]
+```
+
+
+```{python}
+zero_excluded = alt.Chart(data2000).mark_point().encode(
+    alt.X('fertility:Q', scale=alt.Scale(zero=False)),
+    alt.Y('life_expect:Q', scale=alt.Scale(zero=False))
+)
+zero_included = alt.Chart(data2000).mark_point().encode(
+    alt.X('fertility:Q'),
+    alt.Y('life_expect:Q')
+)
+zero_included | zero_excluded
+```
+
+
+```{python}
+alt.Chart(data2000).mark_point(filled=True).encode(
+    alt.X('fertility:Q'),
+    alt.Y('life_expect:Q'),
+    alt.Size('pop:Q', scale=alt.Scale(range=[0,1000]),
+             legend=alt.Legend(orient='right', titleOrient='left')),
+    alt.Color('cluster:N', legend=None),
+    alt.OpacityValue(0.5),
+    alt.Tooltip('country:N'),
+    alt.Row('cluster:N')
+).properties(width=200, height=135)
+```
+
+## Graphical Marks
+
+mark_point()
+    mark_circle()
+    mark_square()
+    mark_tick()
+mark_bar()
+mark_line()
+mark_area()
+
+mark_tick() - better way to see distribution - not as on top of each other
+
+mark_bar() - alt.Color('column:N')
+    alt.X2 (min and max) - shows range per cluster
+mark_line(interpolate='monotone') to smooth lines
