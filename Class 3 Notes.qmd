@@ -104,3 +104,5 @@ mark_tick() - better way to see distribution - not as on top of each other
 mark_bar() - alt.Color('column:N')
     alt.X2 (min and max) - shows range per cluster
 mark_line(interpolate='monotone') to smooth lines
+mark_rect()
+mark_rule()
