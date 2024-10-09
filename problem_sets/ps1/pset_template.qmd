@@ -1,6 +1,6 @@
 ---
-title: "Problem Set 1"
-author: "Akbar Saputra"
+title: "Problem Set 2"
+author: "Sarah Morrison"
 date: "2024-10-04"
 format: 
     html:
@@ -16,43 +16,64 @@ import warnings
 warnings.filterwarnings("ignore")
 ```
 
-1. **PS1:** Due Sat Oct 5 at 5:00PM Central. Worth 50 points. 
+1.  **PS2:** Due Sat Oct 19 at 5:00PM Central. Worth 100 points.
 
-We use (`*`) to indicate a problem that we think might be time consuming. 
+We use (`*`) to indicate a problem that we think might be time consuming.
 
-Steps to submit (5 points on PS1)
+Steps to submit (10 points on PS2)
 
-1. "This submission is my work alone and complies with the 30538 integrity
-policy." Add your initials to indicate your agreement: \*\*\_\_\*\*
-2. "I have uploaded the names of anyone I worked with on the problem set **[here](https://docs.google.com/forms/d/1-zzHx762odGlpVWtgdIC55vqF-j3gqdAp6Pno1rIGK0/edit)**"  \*\*\_\_\*\* (1 point)
-3. Late coins used this pset: \*\*\_\_\*\* Late coins left after submission: \*\*\_\_\*\*
-4. Knit your `ps1.qmd` 
-    * The PDF should not be more than 25 pages. Use `head()` and re-size figures when appropriate. 
-6. Submit to Gradescope (4 points) 
-7. Tag your submission in Gradescope
+1.  "This submission is my work alone and complies with the 30538 integrity policy." Add your initials to indicate your agreement: \*\*SM\*\*
+
+2.  "I have uploaded the names of anyone I worked with on the problem set [**here**](https://docs.google.com/forms/d/1-zzHx762odGlpVWtgdIC55vqF-j3gqdAp6Pno1rIGK0/edit)" \*\*SM\*\* (1 point)
+
+3.  Late coins used this pset: \*\*\_\_\*\* Late coins left after submission: \*\*\_\_\*\*
+
+4.  Knit your ps2.qmd as an html document and print to a pdf to make ps2.pdf.
+    • The PDF should not be more than 25 pages. Use head() and re-size figures when appropriate.
+
+5.  Push ps2.qmd and ps2.pdf to your github repo. It is fine to use Github Desktop.
+
+6.  Submit ps2.pdf via Gradescope (8 points)
+
+7.  Tag your submission in Gradescope
+
+    				
+
+    			
+
+    		
+
+    	
 
 ## Read in one percent sample (15 Points)
 
 1.  
-1. 
 
-1.  
+2.  
+
+3.  
 
 ## Cleaning the data and benchmarking (15 Points)
 
 1.  
 
-1.  
+2.  
 
 ## Visual Encoding (15 Points)
 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
+1.  
+
+2.  
+
+3.  
+
+4.  
+
+5.  
+
+6.  
+
+7.  
 
 # Q1
 
@@ -116,7 +137,7 @@ for col in df_sub.columns:
         print(f"{col} is not sorted at row {row}")
 ```
 
-NOTE: I think the question's wording can be improved. Here, it seems like students are expected to find the sorted column by eyeballing the dataset,  then subset the dataset and write a function to find sorted columns in the subset. It's like they're two separate process. 
+NOTE: I think the question's wording can be improved. Here, it seems like students are expected to find the sorted column by eyeballing the dataset, then subset the dataset and write a function to find sorted columns in the subset. It's like they're two separate process.
 
 # Q2
 

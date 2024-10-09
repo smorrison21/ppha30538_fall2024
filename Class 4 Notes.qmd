@@ -55,3 +55,9 @@ alt.Chart(grouped_by_quarter, width=200).mark_bar().encode(
     alt.Y('US_Gross:Q')
 )
 ```
+
+Reprex.
+Find problem line
+find where parts of error are defined
+    can use head to get a shorter version of file
+want to create the same error again with the shorter code
