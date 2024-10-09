@@ -1,0 +1,28 @@
+---
+title: "Class 4 Notes"
+author: "Sarah Morrison"
+date: Today
+date-format: long
+format: 
+    html:
+        echo: true
+        toc: true
+---
+make sure output is printed on problem sets
+    write "print"
+print or head will show how it is sorted
+
+extract patterns you think are interesting
+aggregating helps - altair helps
+
+```{python}
+import pandas as pd
+import altair as alt
+```
+
+
+```{python}
+movies_url = 'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'
+movies = pd.read_json('/Users/sarahmorrison/Downloads/GitHub/ppha30538_fall2024/movies.json')
+
+```
