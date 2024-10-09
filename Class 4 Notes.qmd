@@ -26,3 +26,32 @@ movies_url = 'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'
 movies = pd.read_json('/Users/sarahmorrison/Downloads/GitHub/ppha30538_fall2024/movies.json')
 
 ```
+
+Shape shows (3201, 16)
+
+
+```{python}
+movies_gross = movies[['US_Gross', 'Release_Date']]
+movies_gross.head()
+#movies_gross['release_time'] = movies_gross[movies_gross['release_date']==]
+movies_gross['Release_Date']= pd.to_datetime(movies_gross['Release_Date'])
+movies_gross['quarter']=movies_gross['Release_Date'].dt.quarter
+grouped_by_quarter = movies_gross.groupby('quarter').agg({'US_Gross': 'median'}).reset_index()
+
+```
+
+
+```{python}
+alt.Chart(movies_url).mark_point().encode(
+    alt.X('month(Release_Date):T'),
+    alt.Y('average(US_Gross):Q')
+)
+```
+
+
+```{python}
+alt.Chart(grouped_by_quarter, width=200).mark_bar().encode(
+    alt.X('quarter:N', axis=alt.Axis(labelAngle=360)),
+    alt.Y('US_Gross:Q')
+)
+```
