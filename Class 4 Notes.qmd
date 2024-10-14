@@ -1,7 +1,7 @@
 ---
-title: "Class 4 Notes"
+title: "Week  2B Notes"
 author: "Sarah Morrison"
-date: Today
+date: October 9, 2024
 date-format: long
 format: 
     html:
